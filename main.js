@@ -43,11 +43,24 @@
 // Функция должна возвратить такой результат:
 
 // С5й п2ь у п11, Т4о г2е - не б3, Е2и в4л п2ь т7й - То т3а т2е - с3!
-// т.е. каждое слово, если оно длинее 4х букв, превращается в нумероним, первую и последнюю букву нужно оставить, а между ними, буквы заменить числом - количеством букв по середине.
+// т.е. каждое слово, если оно длинее 4х букв, превращается в нумероним,
+// первую и последнюю букву нужно оставить, а между ними, буквы заменить числом - количеством букв по середине.
 
 // Используйте методы split(), map(), join()
 
 //? ПИСАТЬ КОД ЗДЕСЬ
+
+// function checkTask(str) {
+//   return str
+//     .split(" ")
+//     .map((el) => `${el[0]}${el.slice(1, -1).length}${el.slice(-1)}`)
+//     .join(" ");
+// }
+// console.log(
+//   checkTask(
+//     "Сложный путь у программиста, Только горе - не беда, Если выбрал путь тернистый - То тогда тебе - сюда!"
+//   )
+// );
 
 //TODO Задание №4
 // Создайте функцию checkTask(arr), которая принимает в аргументы массив состоящий из строк и выводит
@@ -60,7 +73,11 @@
 
 // ['hi', 'ge', 'se']
 
-//? ПИСАТЬ КОД ЗДЕСЬ
+// //? ПИСАТЬ КОД ЗДЕСЬ
+// function checkTask(arr) {
+//   return arr.map((el) => `${el[0]}${el.slice(-1)}`);
+// }
+// console.log(checkTask(["hi", "goodbye", "smile"]));
 
 //TODO Задание №5
 // Напишите функцию removeElem(arr, element), которая принимает 2 аргумента.
@@ -71,10 +88,9 @@
 // Ответ: [2, ‘hello’, true,  5, ‘js’]
 
 //? ПИСАТЬ КОД ЗДЕСЬ
+
 // function checkTask(arr, element) {
-//   for (let i of arr) {
-//   }
-//   return element;
+//   return arr.filter((el) => el !== element);
 // }
 // console.log(checkTask([2, "hello", true, "world", 5, "js"], "world"));
 
@@ -136,18 +152,16 @@
 // 50
 
 //? ПИСАТЬ КОД ЗДЕСЬ
-// function checkTask(sum) {
-//   let res = [];
-//   while (sum <= 1000) {
-//     console.log(sum);
-//     res.push(sum);
-//     sum *= 2;
-//   }
-//   while (res.length > 0) {
-//     console.log(res.pop(sum));
-//   }
+
+// let num = 50;
+// while (num <= 1000) {
+//   console.log(num);
+//   num = num *= 2;
 // }
-// console.log(checkTask(50));
+// while (num > 50) {
+//   num = num / 2;
+//   console.log(num);
+// }
 
 //TODO Задание №8
 // Напишите функцию checkTask(), которая будет генерировать пароли.
@@ -163,6 +177,15 @@
 // Подсказка: погуглить и использовать модуль Math.random()
 
 //? ПИСАТЬ КОД ЗДЕСЬ
+// function checkTask(length = 8) {
+//   let password =
+//     "QWERTYUIOPASDFGHJKLZXCVBNMmnbvcxzlkjhgfdsapoiuytrewq123456789";
+
+//   for (let i = 0; i < password.length; i++) {
+
+//   }
+// }
+// console.log(checkTask());
 
 //TODO Задание №9
 // Дан объект преобразуйте в строку.
@@ -187,8 +210,10 @@
 // let task5 = [4, 5, 5, 5, 3, 5, 2, 3, 1, 3, 4];
 
 //? ПИСАТЬ КОД ЗДЕСЬ
+
 // function checkTask(arr) {
 //   let count = 0;
+//   let res={}
 //   for (let i of arr) {
 //     if (i !== 1) {
 //       count++;
@@ -218,32 +243,32 @@
 
 //? ПИСАТЬ КОД ЗДЕСЬ
 
+// function checkTask(arr) {
+//   return arr.map((el) => arr.filter((indx) => el > indx).length);
+// }
+// console.log(checkTask([8, 1, 2, 2, 3]));
+
 //TODO Задание №12
 // Вам нужно поменять местами значения
 // переменных при помощи деструктуризации.
 // let a = 0;
 // let b = 1;
 // Пример результата:
-// console.log(a, b); // 1, 0
+// console.log(a, b);// 1, 0
 //? ПИСАТЬ КОД ЗДЕСЬ
+
+// function checkTask(a, b) {
+//   return ([a, b] = [b, a]);
+// }
+// console.log(checkTask(0, 1));
 
 //TODO Задание №13
 // Создайте функцию checkTask(arr), принимающую в аргументы массив вида:
 
-// [
-//   { user: "Jon Snow", age: 20 },
-//   { user: "Jane Eyre", age: 21 },
-//   { user: "Bruce Wayne", age: 17 },
-//   { user: "Dani Targaryen", age: 18 },
-//  ];
-// C помощью деструктуризации и цикла выведите в консоль имена и возраст каждого объекта:
-
-// Jon Snow  20
-// Jane Eyre 21
-// Bruce Wayne 17
-// Dani Targaryen 18
-
-// function checkTask(arr) {}
+// function checkTask(arr) {
+//   let [{ user: a, age: num }] = arr;
+//   return [a, num];
+// }
 // console.log(
 //   checkTask([
 //     { user: "Jon Snow", age: 20 },
@@ -252,6 +277,19 @@
 //     { user: "Dani Targaryen", age: 18 },
 //   ])
 // );
+
+// [
+//   { user: "Jon Snow", age: 20 },
+//   { user: "Jane Eyre", age: 21 },
+//   { user: "Bruce Wayne", age: 17 },
+//   { user: "Dani Targaryen", age: 18 },
+// ];
+// C помощью деструктуризации и цикла выведите в консоль имена и возраст каждого объекта:
+
+// Jon Snow  20
+// Jane Eyre 21
+// Bruce Wayne 17
+// Dani Targaryen 18
 
 //? ПИСАТЬ КОД ЗДЕСЬ
 
@@ -264,6 +302,17 @@
 // console.log(checkTask('Hello'))
 // {'H': 1, 'e': 1, 'l': 2, 'o': 1}
 //? ПИСАТЬ КОД ЗДЕСЬ
+
+// function checkTask(str) {
+//   let obj = {};
+//   for (let i of str) {
+//     if (obj[i]) {
+//       obj[i]++;
+//     } else obj[i] = 1;
+//   }
+//   return obj
+// }
+// console.log(checkTask("Hello"));
 
 //TODO Задание №15
 // Расчет премии сотрудникам, дан массив с объектами
